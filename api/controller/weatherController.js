@@ -1,9 +1,10 @@
 import request from 'request'
+import apiKey from '../keys/apiKey'
 
 const WeatherController = {
     getWeatherOfLondon(req, res){
-        const apiKey = '3d9bdb11a7bf434a610af4eb33dba7e2';
-        const urlLink = "http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=3d9bdb11a7bf434a610af4eb33dba7e2";
+        // const api = apiKey
+        const urlLink = `http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=${apiKey}`;
         request(urlLink, (err, response, body) => {
             if(err){
                 console.log(err)
